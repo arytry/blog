@@ -46,7 +46,7 @@ jobs:
       # 自定义域名
       - name: Custom CNAME
         env:
-          CNAME: stack.arytry.com
+          CNAME: blog.arytry.com
         run:
           cd docs/.vuepress/dist && echo $CNAME > CNAME
 

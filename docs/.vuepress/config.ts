@@ -6,7 +6,7 @@ import { bar } from './configs'
 export default defineUserConfig({
     base: '/',
     lang: 'zh-CN',
-    title: 'Stack',
+    title: 'Blog',
     description: '同步，分享，解决方案',
     head: [
         ['link', { rel: 'icon', href: '/assets/img/favicon.ico' }]
@@ -25,7 +25,7 @@ export default defineUserConfig({
     theme: defaultTheme({
         logo: '/assets/img/logo.png',
 
-        repo: 'arytry/stack',
+        repo: 'arytry/blog',
         editLink: false,    // 展示 repo 的编辑路径
         // editLinkText: '在 GitHub 上编辑此页',
         lastUpdated: false,

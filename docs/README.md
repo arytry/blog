@@ -1,6 +1,6 @@
 ---
 home: false
-title: 堆站
+title: 博客
 ---
 
 本系列文章基于vuepress-next搭建
