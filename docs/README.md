@@ -1,6 +1,6 @@
 ---
 home: false
-title: 博客
+title: 首页
 ---
 
 本系列文章基于vuepress-next搭建
