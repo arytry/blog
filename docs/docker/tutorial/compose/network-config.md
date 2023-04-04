@@ -1,4 +1,4 @@
-# docker-compose网络配置
+# 网络配置
 
 ## 未显示声明
 
@@ -23,16 +23,11 @@ services:
     restart: always
 ```
 
-启动的容器会被加入`test_default`中，其中`test`为`docker-compose`文件所在的父文件夹名
+启动的容器会被加入`srv_default`中，其中`srv`为`docker-compose`文件所在的父文件夹名
 
 ```yml
 [root@vm02 test]# docker network ls
-NETWORK ID          NAME                DRIVER              SCOPE
-fba1a241ba5f        bridge              bridge              local
-662b6e28d109        docker_gwbridge     bridge              local
-e5180989ca67        host                host                local
-91f9327572be        none                null                local
-be43cf4b2125        test_default        bridge              local
+be43cf4b2125        srv_default         bridge              local
 ```
 
 ## networks关键字自定义网络
@@ -65,8 +60,8 @@ networks:
 ```bash
 [root@vm02 network-test]# docker network ls
 NETWORK ID          NAME                 DRIVER              SCOPE
-ca9419193d95        network-test_back    bridge              local
-7c38ab9beba4        network-test_front   bridge              local
+ca9419193d95        srv_back             bridge              local
+7c38ab9beba4        srv_front            bridge              local
 ```
 
 ## 使用现有网络
