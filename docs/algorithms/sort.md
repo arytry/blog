@@ -6,7 +6,7 @@
 
 2. 非比较类排序：不通过比较来决定元素间的相对次序，它可以突破基于比较排序的时间下界，以线性时间运行，因此也称为线性时间非比较类排序。
 
-![排序算法](/assets/img/sort/classify.png "排序算法")
+![排序算法](/assets/img/algorithms/sort-classify.png "排序算法")
 
 算法复杂度比较
 
@@ -16,7 +16,7 @@
  | 插入排序 |       O(n^2)       |       O(n^2)       |        O(n)        |    O(1)    |  稳定  |
 -->
 
-![算法复杂度](/assets/img/sort/algorithmic-complexity.png "算法复杂度")
+![算法复杂度](/assets/img/algorithms/sort-algorithmic-complexity.png "算法复杂度")
 
 * 稳定：如果a原本在b前面，而a=b，排序之后a仍然在b的前面。
 * 不稳定：如果a原本在b的前面，而a=b，排序之后 a 可能会出现在 b 的后面。
@@ -36,7 +36,7 @@
 
 ### 动图演示
 
-![冒泡排序](/assets/img/sort/bubble-sort.gif "冒泡排序")
+![冒泡排序](/assets/img/algorithms/sort-bubble.gif "冒泡排序")
 
 ### 代码实现
 

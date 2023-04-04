@@ -1,5 +1,6 @@
 export const json = {
     archive: '归档',
+    'archive/json': 'Json',
     'algorithms': '算法',
     'algorithms/binarytree': '二叉树',
     'algorithms/encryption': '加密算法',
@@ -14,7 +15,5 @@ export const json = {
     'docker/tutorial': 'Docker教程',
     'docker/tutorial/compose': 'Docker-Compose',
     explore: '探索',
-    wiki: '百科',
-    support: '支持',
-    json: 'Json'
+    support: '支持'
 };

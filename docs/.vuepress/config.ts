@@ -6,7 +6,7 @@ import { bar } from './configs'
 export default defineUserConfig({
     base: '/',
     lang: 'zh-CN',
-    title: 'Blog',
+    title: '博客',
     description: '同步，分享，解决方案',
     head: [
         ['link', { rel: 'icon', href: '/assets/img/favicon.ico' }]
@@ -18,7 +18,11 @@ export default defineUserConfig({
     plugins: [
         searchPlugin({
             maxSuggestions: 10,
-            // placeholder: '搜索文档'
+            locales: {
+                "/": {
+                    placeholder: '搜索'
+                }
+            }
         })
     ],
 

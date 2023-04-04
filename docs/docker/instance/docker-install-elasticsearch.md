@@ -38,20 +38,30 @@ docker run -it --name elasticsearch \
   elasticsearch:8.5.1
 ```
 
-::: tip 提示
+::: warning 提醒
 从`Elasticsearch 8.0`开始默认启用了安全性，也就是启用了TLS加密，在访问时需要带`https`
+
+访问记得带https
+
+访问记得带https
+
+访问记得带https
 :::
 
 在docker中启动单节点`Elasticsearch`集群，会自动进行以下安全配置：
 
-> * 为传输层和`HTTP`层生成证书和密钥。
-> * 传输层安全 (TLS) 配置设置被写入`elasticsearch.yml`.
-> * 为`elastic`用户生成密码。
-> * 为`Kibana`生成一个注册令牌。
+* 为传输层和`HTTP`层生成证书和密钥。
+* 传输层安全 (TLS) 配置设置被写入`elasticsearch.yml`.
+* 为`elastic`用户生成密码。
+* 为`Kibana`生成一个注册令牌。
 
-等容器运行起来后，我们会在屏幕上看到生成的密码和注册口令，记住它们，后面会用上
+容器运行起来后，密码和注册令牌仅在第一次启动`Elasticsearch`的控制台显示，所以这里不建议后台运行容器(`-d`)
 
-密码和注册令牌仅在第一次启动`Elasticsearch`时显示，所以这里不建议后台运行容器(`-d`)。
+当然通过查看输出日志也能得到相关信息
+
+```bash
+docker logs -f elasticsearch
+```
 
 访问<https://localhost:9200>, 输入`elastic / 密码`验证，密码就是刚才屏幕上显示的，我们也可以进入容器通过`bin/elasticsearch-reset-password -u elastic`命令来重置密码。
 
@@ -112,7 +122,15 @@ kibana 是一款适用于 es 的 数据可视化和管理工具, 可以提供实
 
   在这里我们直接采用`token`配置方式，这里的token就是在第一次运行`elasticsearch`容器时出现的用于配置`kibana`的token
   
-  下一步`kibana`要求输入验证码，验证码需要进入`kibana`容器执行`bin/kibana-verification-code`命令获得
+  下一步`kibana`要求输入验证码，验证码可以通过两种方式获得
+  
+  和`elasticsearch`一样，验证码此时会在控制台输出，我们可以通过查看日志获得
+
+  ```bash
+  docker logs -f kibana
+  ```
+  
+  或者进入`kibana`容器执行`bin/kibana-verification-code`命令获得
 
   ```bash
   # 进入容器
