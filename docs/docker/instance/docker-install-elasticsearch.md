@@ -111,7 +111,7 @@ kibana 是一款适用于 es 的 数据可视化和管理工具, 可以提供实
   为了方便管理，与`elasticsearch`使用同一网络
 
   ```bash
-  docker run --name kibana --net elastic -p 5601:5601 kibana:8.5.1
+  docker run --restart=always --name kibana --net elastic -p 5601:5601 kibana:8.5.1
   ```
 
   现在浏览器访问`5601`端口，启动成功

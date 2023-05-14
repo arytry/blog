@@ -177,6 +177,7 @@ docker exec -it <container_name> /bin/bash
 ```
 
 * `container_name` 容器名称
+* `/bin/bash` 执行命令，也有`/bin/sh`和`bin/ash`
 
 启动某个服务/代理
 
@@ -185,6 +186,14 @@ sh <agent/services.sh> start
 ```
 
 * `agent/services.sh` 服务/代理文件名
+
+## 容器日志
+
+很多容器在首次启动时会显示一些信息，如果运行容器时是采用后台运行(-d)，那么启动后可以通过日志查看输出信息
+
+```bash
+docker logs <container_name>
+```
 
 ## 相关链接
 

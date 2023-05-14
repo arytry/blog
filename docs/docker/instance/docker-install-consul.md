@@ -178,4 +178,6 @@ d1efd5396188  172.17.0.1:8301  alive   server  1.15.1  2         dc1  default   
 
 ## 相关链接
 
-[.NET Core + Consul：服务注册与发现](https://www.jianshu.com/p/4aaaee6e9ce1 '.NET Core + Consul：服务注册与发现')
+* [.NET Core + Consul：服务注册与发现](https://www.jianshu.com/p/4aaaee6e9ce1 '.NET Core + Consul：服务注册与发现')
+* [.Net Core微服务入门全纪录（二）——Consul-服务注册与发现（上）](https://www.cnblogs.com/xhznl/p/13091750.html)
+* [Docker跨服务器通信Overlay解决方案(下) Consul集群](https://blog.csdn.net/u012586326/article/details/112344382)

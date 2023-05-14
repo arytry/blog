@@ -4,20 +4,22 @@
 
 docker配置文件，如果刚安装完docker该文件应该是不存在的，需要手动`vi(m) daemon.json`创建，位于`/etc/docker`目录下面
 
-``` bash
+``` json
 {
-    # docker镜像源，官方镜像地址如果不能下载可更换
+    // docker镜像源，官方镜像地址如果不能下载可更换
     "registry-mirrors": [
+        "https://21kbir7t.mirror.aliyuncs.com",
         "https://docker.mirrors.ustc.edu.cn/",
         "https://reg-mirror.qiniu.com",
-        "https://hub-mirror.c.163.com"
+        "https://hub-mirror.c.163.com",
+        "http://f1361db2.m.daocloud.io"
     ],
 
     "insecure-registries":["192.168.222.135:5000"],
     "log-driver": "json-file",
     "log-opts":
     {
-        # 日志最大文件为10m
+        // 日志最大文件为10m
         "max-size": "10m",
         "max-file": "5"
     }
