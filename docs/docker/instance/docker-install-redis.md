@@ -129,3 +129,7 @@ services:
     command:
       redis-server /etc/redis/redis.conf
 ```
+
+## 相关链接
+
+* [dotnetcore三大Redis客户端对比和使用心得](https://www.cnblogs.com/JulianHuang/p/11418881.html)

@@ -3,7 +3,7 @@ home: false
 title: 首页
 ---
 
-本系列文章基于vuepress-next搭建
+* 博客基于vuepress-next搭建
 
 <CodeGroup>
   <CodeGroupItem title="YARN" active>
@@ -36,3 +36,5 @@ npx vuepress build
 
   </CodeGroupItem>
 </CodeGroup>
+
+* 本系列文章代码片段主要基于C#语言作出解释，欢迎补充其它语言

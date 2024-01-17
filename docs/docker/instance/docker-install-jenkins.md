@@ -24,6 +24,7 @@ docker run -d -u root --name=jenkins \
 ```
 
 * `-v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/bin/docker` 将jenkins容器内的docker命令指向了宿主机，结合`-u root`在容器中才有权限执行docker命令
+* `-v $(which docker-compose):/usr/bin/docker-compose \` 容器内的docker-compose命令指向宿主机
 * `-v /srv/jenkins/opt:/var/jenkins_home` 将docker里jenkins工作目录`/var/jenkins_home`挂载到宿主机的`/srv/jenkins/var/jenkins_home`
   > `-v jenkins:/var/jenkins_home` 将docker里jenkins工作目录`/var/jenkins_home`挂载到本地容器卷`/var/lib/docker/volumes`下面的`jenkins`目录
 
@@ -47,7 +48,7 @@ chown -R 1000 /srv/jenkins/opt
 docker logs jenkins
 ```
 
-如果日志太多不方便查找，也可以在工作目录的`secrets/initialAdminPassword`文件中查看
+如果日志太多不方便查找，也可以在`/var/jenkins_home/secrets/initialAdminPassword`文件中查看
 
 由于我们做了工作目录映射，所以直接在宿主机中可以找到该文件
 

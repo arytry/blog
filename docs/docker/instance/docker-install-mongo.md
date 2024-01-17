@@ -34,3 +34,7 @@ mongo的配置文件位置为`/data/configdb`，数据文件位置为`/data/db`�
 :::
 
 现在就可以通过[Robo](https://robomongo.org/ 'Robo')、[Compass](https://www.mongodb.com/products/compass 'Compass')等客户端工具连接到mongo数据库了
+
+## 相关链接
+
+* [在.NET Core中使用MongoDB明细教程(1):驱动基础及文档插入](https://www.cnblogs.com/yilezhu/p/13493195.html)

@@ -162,3 +162,4 @@ gitlab-runner register \
 
 * [Install GitLab Runner](https://docs.gitlab.com/runner/install/ 'Install GitLab Runner')
 * [Registering runners](https://docs.gitlab.com/runner/register/ 'Registering runners')
+* [gitlab-runner 的 executors 之 docker](https://www.cnblogs.com/xxred/p/11548254.html)
