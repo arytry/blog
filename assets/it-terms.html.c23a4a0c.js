@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-6083a482","path":"/explore/it-terms.html","title":"IT术语","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"explore/it-terms.md"}');export{e as data};

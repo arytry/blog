@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-5d83f5d6","path":"/explore/another-me-in-the-world.html","title":"世界上的另一个我","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"explore/another-me-in-the-world.md"}');export{e as data};

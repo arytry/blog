@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-490a23c6","path":"/design-pattern/structural/","title":"介绍","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"design-pattern/structural/README.md"}');export{t as data};
