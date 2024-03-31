@@ -7,6 +7,12 @@ Please rate the audio and video quality
 * Rate 评价
 * Quality 质量，品质
 
+* Useless
+* Poor
+* Ok
+* Good
+* Excellent
+
 ***
 
 * Rating （星级）评分、等级
