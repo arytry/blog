@@ -63,7 +63,7 @@ result();//999
 
 那为什么是闭包呢？我们可以根据上边MDN对闭包的定义这句话（闭包让你可以在一个内层函数中访问到其外层函数的作用域。）进行分析，我们再看一张图：
 
-![闭包]([/assets/img/algorithms/linked-node-reverse-1.jpg](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/09e69a7ec327436d8aedf7b92828e961~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp) "闭包")
+![闭包](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/09e69a7ec327436d8aedf7b92828e961~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp "闭包")
 
 f1是一个外部函数，变量n是外部函数的局部变量，f2是嵌套在f1中的一个内部函数，在**内部函数f2中调用了外部函数f1的变量n**,所以f2和变量n就组成了一个闭包。
 
