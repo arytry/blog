@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-3a390794","path":"/explore/single-is-simple.html","title":"Single is simple, double is trouble","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"explore/single-is-simple.md"}');export{e as data};

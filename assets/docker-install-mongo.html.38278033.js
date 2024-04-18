@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-67634f20","path":"/docker/instance/docker-install-mongo.html","title":"docker安装mongo","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[{"level":2,"title":"相关链接","slug":"相关链接","link":"#相关链接","children":[]}],"git":{},"filePathRelative":"docker/instance/docker-install-mongo.md"}');export{e as data};

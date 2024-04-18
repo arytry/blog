@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-cc93be06","path":"/design-pattern/behavioral/","title":"介绍","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"design-pattern/behavioral/README.md"}');export{e as data};

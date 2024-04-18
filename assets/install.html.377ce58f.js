@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-2b3c6872","path":"/docker/guide/install.html","title":"安装","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[{"level":2,"title":"Ubuntu","slug":"ubuntu","link":"#ubuntu","children":[{"level":3,"title":"自动安装","slug":"自动安装","link":"#自动安装","children":[]}]}],"git":{},"filePathRelative":"docker/guide/install.md"}');export{e as data};

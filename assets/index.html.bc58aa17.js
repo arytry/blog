@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-ec856104","path":"/algorithms/binarytree/","title":"介绍","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"algorithms/binarytree/ReadMe.md"}');export{e as data};
