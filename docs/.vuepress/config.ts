@@ -1,6 +1,8 @@
+import { viteBundler } from '@vuepress/bundler-vite'
+import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
-import { defaultTheme } from 'vuepress'
 import { searchPlugin } from '@vuepress/plugin-search'
+import { copyCodePlugin } from '@vuepress/plugin-copy-code'
 import { bar } from './configs'
 
 export default defineUserConfig({
@@ -23,8 +25,11 @@ export default defineUserConfig({
                     placeholder: '搜索'
                 }
             }
-        })
+        }),
+        copyCodePlugin(),
     ],
+    
+    bundler: viteBundler(),
 
     theme: defaultTheme({
         logo: '/assets/img/logo.png',

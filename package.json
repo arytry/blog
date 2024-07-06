@@ -7,8 +7,11 @@
   "private": true,
   "repository": "https://github.com/arytry/blog.git",
   "devDependencies": {
-    "@vuepress/plugin-search": "^2.0.0-beta.53",
-    "vuepress": "^2.0.0-beta.53"
+    "@vuepress/bundler-vite": "^2.0.0-rc.14",
+    "@vuepress/plugin-copy-code": "^2.0.0-rc.37",
+    "@vuepress/plugin-search": "^2.0.0-rc.37",
+    "@vuepress/theme-default": "^2.0.0-rc.37",
+    "vuepress": "^2.0.0-rc.14"
   },
   "scripts": {
     "docs:dev": "vuepress dev docs",
