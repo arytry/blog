@@ -12,6 +12,7 @@
 public class Singleton
 {
     private static readonly Singleton _instance;
+
     static Singleton()
     {
         _instance = new Singleton();
@@ -34,9 +35,10 @@ public class Singleton
 以上写法可简写为：
 
 ```csharp
-public class Singleton
+public sealed class Singleton
 {
     private static readonly Singleton _instance = new Singleton();
+
     public static Singleton Instance
     {
         get
@@ -50,7 +52,7 @@ public class Singleton
 这里的 new Singleton() 等同于在静态构造函数中实例化。在 C# 7 中还可以进一步简写如下：
 
 ```csharp
-public class Singleton
+public sealed class Singleton
 {
     public static Singleton Instance { get; } = new Singleton();
 }
@@ -61,13 +63,13 @@ public class Singleton
 注意，不能这么写：
 
 ```csharp
-public class Singleton
+public sealed class Singleton
 {
     public static Singleton Instance => new Singleton();
 }
 
 // 等同于：
-public class Singleton
+public sealed class Singleton
 {
     public static Singleton Instance
     {
@@ -80,9 +82,13 @@ public class Singleton
 
 ## 懒汉式
 
-> 懒汉式单例实现需要考虑线程安全问题
+::: warning 注意
+懒汉式单例实现需要考虑线程安全问题
+:::
 
-先来看一段经典的线程安全的单列模式实现代码：
+### 线程锁
+
+先来看一段经典的线程安全的单例模式实现代码：
 
 ```csharp
 public sealed class Singleton
@@ -110,10 +116,45 @@ public sealed class Singleton
 }
 ```
 
-网上搜索 C# 单例模式，大部分都是这种使用 lock 来确保线程安全的写法，这是经典标准的单例模式的写法，没问题，很放心。在 lock 里外都做一次 instance 空判断，双保险，足以保证线程安全和单例性。但这种写法似乎太麻烦了，而且容易写错。早在 C# 3.5 的时候，就有了更好的写法，使用`Lazy<T>`。
+网上搜索 C# 单例模式，大部分都是这种使用`lock`来确保线程安全的写法，这是经典标准的单例模式的写法，没问题，很放心。在`lock`里外都做一次`instance`空判断，双保险，足以保证线程安全和单例性。
+
+::: tip 扩展知识
+
+1. 为什么要加`sealed`？
+
+`sealed`在.net中是禁止继承，有了它就可以保证不会有扩展类继承而破坏它的单例性。
+
+2. 为什么`lock`只能用引用类型？
+
+`lock`只是一个语法糖，其本质是这样
 
 ```csharp
-public class LazySingleton
+private static readonly object _lockObject = new Object();
+var locked = false;
+//上锁
+Monitor.Enter(_lockObject, ref locked);
+try
+{
+    //do sth.
+}
+finally
+{
+    if (locked)
+        Monitor.Exit(_lockObject);
+}
+```
+
+这里可以看到`Monitor`对象的`Enter`和`Exit`方法接收的参数都是要求引用类型，如果不用引用类型，这里会有一个装箱和拆箱的问题，导致加锁解锁不是同一个对象
+:::
+
+但这种写法似乎太麻烦了，而且容易写错。
+
+### 懒加载
+
+早在 C# 3.5 的时候，就有了更好的写法，使用`Lazy<T>`。
+
+```csharp
+public sealed class LazySingleton
 {
     private static readonly Lazy<LazySingleton> _instance =
         new Lazy<LazySingleton>(() => new LazySingleton());
