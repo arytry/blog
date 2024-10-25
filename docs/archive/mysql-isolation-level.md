@@ -31,9 +31,9 @@
 |可重复读（repeatable-read） |否|否|是|
 |串行化（serializable）      |否|否|否|
 
-mysql默认的事务隔离级别为repeatable-read
+mysql默认的事务隔离级别为`repeatable-read`
 
-MySQL查询事务隔离级别用transaction_isolation，tx_isolation在MySQL 5.7.20后被弃用。
+MySQL查询事务隔离级别用`transaction_isolation`，`tx_isolation`在MySQL 5.7.20后被弃用。
 
 ```sql
 SELECT @@transaction_isolation
