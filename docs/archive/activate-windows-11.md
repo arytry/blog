@@ -6,13 +6,36 @@ Windows 系统版本之间是可以互相切换的
 
 ## 版本升级检查
 
-现在我们要检查你的版本是否支持升级到对应版本，运行以下命令来检查
+检查你的版本是否支持升级到对应版本，运行以下命令
 
 ```sh
 DISM /online /Get-TargetEdition
 ```
 
-在列表中显示的版本，代表你的 Windows 版本都可以免费升级
+内容大概如下：
+
+```sh
+Deployment Image Servicing and Management tool
+Version: 10.0.22621.2792
+
+Image Version: 10.0.22631.4317
+
+Editions that can be upgraded to:
+
+Target Edition : Professional
+Target Edition : CloudEdition
+Target Edition : ProfessionalEducation
+Target Edition : ProfessionalWorkstation
+Target Edition : Education
+Target Edition : ProfessionalCountrySpecific
+Target Edition : ProfessionalSingleLanguage
+Target Edition : ServerRdsh
+Target Edition : IoTEnterprise
+
+The operation completed successfully.
+```
+
+在列表中显示的版本，代表你目前的 Windows 版本都可以切换升级
 
 ## 使用免费的 KMS 客户端密钥激活 Windows11
 
@@ -24,15 +47,17 @@ DISM /online /Get-TargetEdition
 现在您将得到一个命令提示符。
 :::
 
-如果是初次激活请直接往下查看激活方式，如果已经激活过系统可以先来看几条命令
+如果是初次激活请直接往下查看激活方式
 
-首先以管理员身份打开命令提示符
+如果已经试过激活系统可以先来看几条清理命令
 
-输入以下命令：`slmgr.vbs /upk`，它将给出一条消息，单击 OK
+* 首先以管理员身份打开命令提示符
 
-现在输入这个命令：`slmgr.vbs /cpky`，它将再次给出一条消息，然后再次单击 OK
+* 输入以下命令：`slmgr.vbs /upk`，它将给出一条消息，单击 OK
 
-现在输入以下命令：`slmgr.vbs/ckms`，当您收到消息时，再次单击 OK
+* 现在输入这个命令：`slmgr.vbs /cpky`，它将再次给出一条消息，然后再次单击 OK
+
+* 现在输入以下命令：`slmgr.vbs/ckms`，当您收到消息时，再次单击 OK
 
 ### 手动激活
 
