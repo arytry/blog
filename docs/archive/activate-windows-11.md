@@ -65,44 +65,44 @@ The operation completed successfully.
 
 2. 安装 KMS 客户端密钥
 
-使用命令`slmgr /ipk kmsclientkey`安装许可证密钥(kmsclientkey 是与 Windows 版本对应的激活密钥)。
+   使用命令`slmgr /ipk kmsclientkey`安装许可证密钥(kmsclientkey 是与 Windows 版本对应的激活密钥)。
 
-```sh
-slmgr /ipk NW6C2-QMPVW-D7KKK-3GKT6-VCFB2
-```
+   ```sh
+   slmgr /ipk NW6C2-QMPVW-D7KKK-3GKT6-VCFB2
+   ```
 
-下面是 Windows11 许可证密钥的列表：
+   下面是 Windows11 许可证密钥的列表：
 
-* **Home**: TX9XD-98N7V-6WMQ6-BX7FG-H8Q99
-* **Home N**: 3KHY7-WNT83-DGQKR-F7HPR-844BM
-* **Home Single Language**: 7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH
-* **Home Country Specific**: PVMJN-6DFY6-9CCP6-7BKTT-D3WVR
-* **Pro**: W269N-WFGWX-YVC9B-4J6C9-T83GX
-* **Pro N**: MH37W-N47XK-V7XM9-C7227-GCQG9
-* **Education**: NW6C2-QMPVW-D7KKK-3GKT6-VCFB2
-* **Education N**: 2WH4N-8QGBV-H22JP-CT43Q-MDWWJ
-* **Enterprise**: NPPR9-FWDCX-D2C8J-H872K-2YT43
-* **Enterprise N**: DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4
+   * **Home**: TX9XD-98N7V-6WMQ6-BX7FG-H8Q99
+   * **Home N**: 3KHY7-WNT83-DGQKR-F7HPR-844BM
+   * **Home Single Language**: 7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH
+   * **Home Country Specific**: PVMJN-6DFY6-9CCP6-7BKTT-D3WVR
+   * **Pro**: W269N-WFGWX-YVC9B-4J6C9-T83GX
+   * **Pro N**: MH37W-N47XK-V7XM9-C7227-GCQG9
+   * **Education**: NW6C2-QMPVW-D7KKK-3GKT6-VCFB2
+   * **Education N**: 2WH4N-8QGBV-H22JP-CT43Q-MDWWJ
+   * **Enterprise**: NPPR9-FWDCX-D2C8J-H872K-2YT43
+   * **Enterprise N**: DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4
 
-请根据自己系统升级版本选择对应许可证密钥
+   请根据自己系统升级版本选择对应许可证密钥
 
 3. 设置 KMS 服务器
 
-使用命令`slmgr /skms kms8.msguides.com`连接到我的 KMS 服务器。
+   使用命令`slmgr /skms kms8.msguides.com`连接到我的 KMS 服务器。
 
-```sh
-slmgr /skms kms8.msguides.com
-```
+   ```sh
+   slmgr /skms kms8.msguides.com
+   ```
 
 4. 激活你的 Windows
 
-最后一步是使用命令`slmgr /ato`激活 Windows。
+   最后一步是使用命令`slmgr /ato`激活 Windows。
 
-```sh
-slmgr /ato
-```
+   ```sh
+   slmgr /ato
+   ```
 
-如果您看到错误`0x80070005`，这意味着服务器正忙。请再次尝试`ato`命令，直到成功为止。
+   如果您看到错误`0x80070005`，这意味着服务器正忙。请再次尝试`ato`命令，直到成功为止。
 
 ### 使用批处理文件
 
@@ -144,4 +144,5 @@ pause >nul
 请稍等。您将看到“产品激活成功”一行。这意味着激活过程已经完成。
 
 ## 参考文档
+
 [Easy ways to activate Windows 11 for FREE without a product key](https://msguides.com/windows-11)
