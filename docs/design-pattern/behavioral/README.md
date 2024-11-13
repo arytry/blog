@@ -14,5 +14,5 @@
 * 状态模式（State Pattern）
 * 空对象模式（Null Object Pattern）
 * [策略模式（Strategy Pattern）](strategy-pattern.md)
-* 模板模式（Template Pattern）
+* [模板方法模式（Template Method Pattern）](template-method-pattern.md)
 * 访问者模式（Visitor Pattern）

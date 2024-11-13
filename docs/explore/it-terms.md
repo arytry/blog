@@ -24,9 +24,14 @@ Please rate the audio and video quality
 
 ***
 
-* Deposit 存入
+* Deposit 存入，指往银行存钱等
 * Withdraw 提现
-* Top-Up 充值
+* Top-Up 充值，一般指话费充值
+
+***
+
+* Preferences 偏好设置
+* Settings 设置
 
 ***
 

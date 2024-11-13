@@ -3,6 +3,7 @@
 要将自己的包上传到 NuGet，可以按照以下步骤操作：
 
 ## 创建 NuGet 包
+
 首先，需要一个项目文件（例如`.csproj`）来构建 NuGet 包。确保项目有以下内容：
 
 * 在 .csproj 文件中定义了必要的`Package`元数据（如`PackageId`、`Version`、`Authors`等）。
@@ -32,7 +33,7 @@ dotnet pack
 
 这将生成一个`.nupkg`文件，它就是你要上传到 NuGet 的包。
 
-##  创建 NuGet API Key
+## 创建 NuGet API Key
 
 登录到[NuGet.org](https://www.nuget.org/)，并按照以下步骤生成 API Key：
 
