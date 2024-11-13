@@ -1,0 +1,57 @@
+import{_ as n,c as s,o as a,e}from"./app-0TPXc-ei.js";const i={},c=e(`<h1 id="service-name和container-name" tabindex="-1"><a class="header-anchor" href="#service-name和container-name"><span>service name和container name</span></a></h1><p>我们在定义docker-compose.yml文件里面经常会有service name和container name，这两者有什么区别呢？</p><h2 id="基本概念" tabindex="-1"><a class="header-anchor" href="#基本概念"><span>基本概念</span></a></h2><ol><li>一个service可以拥有一个或多个container</li><li>container是docker的概念，因此我们在docker域里面，处理的是container</li><li>service是docker-compose概念， 因此我们在docker-compose域里面，才处理的是service(当然docker-compose也能处理container)</li></ol><ul><li><p>同时定义service name和container name</p><div class="language-yaml line-numbers-mode" data-highlighter="prismjs" data-ext="yml" data-title="yml"><pre class="language-yaml"><code><span class="line"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">&#39;2&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token key atrule">services</span><span class="token punctuation">:</span></span>
+<span class="line">  <span class="token key atrule">nginxservice</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx</span>
+<span class="line">    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> nginx</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="line">$ <span class="token function">docker-compose</span> up</span>
+<span class="line"></span>
+<span class="line">$ <span class="token function">docker</span> <span class="token function">ps</span></span>
+<span class="line">CONTAINER ID   IMAGE   COMMAND                  CREATED          STATUS         PORTS    NAMES</span>
+<span class="line">de5ce2bcf891   nginx   <span class="token string">&quot;/docker-entrypoint.…&quot;</span>   <span class="token number">53</span> seconds ago   Up <span class="token number">5</span> seconds   <span class="token number">80</span>/tcp   nginx</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line">$ <span class="token function">docker-compose</span> stop nginxservice</span>
+<span class="line">Stopping nginx <span class="token punctuation">..</span>. <span class="token keyword">done</span></span>
+<span class="line"></span>
+<span class="line">$ <span class="token function">docker-compose</span> start nginxservice</span>
+<span class="line">Starting nginx <span class="token punctuation">..</span>. <span class="token keyword">done</span></span>
+<span class="line"></span>
+<span class="line">$ <span class="token function">docker-compose</span> stop nginx</span>
+<span class="line">ERROR: No such service: nginx</span>
+<span class="line"></span>
+<span class="line">$ <span class="token function">docker-compose</span> start nginx</span>
+<span class="line">ERROR: No such service: nginx</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>可以看到docker-compose start/stop处理的service name，而不是container name</p></li><li><p>只定义service name</p><div class="language-yaml line-numbers-mode" data-highlighter="prismjs" data-ext="yml" data-title="yml"><pre class="language-yaml"><code><span class="line"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">&#39;2&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token key atrule">services</span><span class="token punctuation">:</span></span>
+<span class="line">  <span class="token key atrule">nginxservice</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="line">$ <span class="token function">docker-compose</span> up</span>
+<span class="line"></span>
+<span class="line">$ <span class="token function">docker</span> <span class="token function">ps</span></span>
+<span class="line">CONTAINER ID   IMAGE   COMMAND                  CREATED          STATUS         PORTS    NAMES</span>
+<span class="line">de5ce2bcf891   nginx   <span class="token string">&quot;/docker-entrypoint.…&quot;</span>   <span class="token number">53</span> seconds ago   Up <span class="token number">5</span> seconds   <span class="token number">80</span>/tcp   srv_nginxservice_1</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>运行起来后可以看到docker-compose自动给container分配了一个名字</p><p>其格式为：&lt;当前工作路径名&gt;_&lt;servicename&gt;_&lt;sequencenumber&gt;</p><p>sequencenumber是干什么用的呢，我们看后面的例子</p></li><li><p>定义多个container name</p><p>我们一次启动5个linuxservice containers：</p><div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="line"><span class="token function">docker-compose</span> up <span class="token parameter variable">--scale</span> <span class="token assign-left variable">nginxservice</span><span class="token operator">=</span><span class="token number">5</span></span>
+<span class="line">Creating network <span class="token string">&quot;srv_default&quot;</span> with the default driver</span>
+<span class="line">Creating srv_nginxservice_1 <span class="token punctuation">..</span>.</span>
+<span class="line">Creating srv_nginxservice_2 <span class="token punctuation">..</span>.</span>
+<span class="line">Creating srv_nginxservice_3 <span class="token punctuation">..</span>.</span>
+<span class="line">Creating srv_nginxservice_4 <span class="token punctuation">..</span>.</span>
+<span class="line">Creating srv_nginxservice_5 <span class="token punctuation">..</span>.</span>
+<span class="line">Creating srv_nginxservice_1 <span class="token punctuation">..</span>. <span class="token keyword">done</span></span>
+<span class="line">Creating srv_nginxservice_2 <span class="token punctuation">..</span>. <span class="token keyword">done</span></span>
+<span class="line">Creating srv_nginxservice_3 <span class="token punctuation">..</span>. <span class="token keyword">done</span></span>
+<span class="line">Creating srv_nginxservice_4 <span class="token punctuation">..</span>. <span class="token keyword">done</span></span>
+<span class="line">Creating srv_nginxservice_5 <span class="token punctuation">..</span>. <span class="token keyword">done</span></span>
+<span class="line">Attaching to srv_nginxservice_3, srv_nginxservice_2, srv_nginxservice_4, srv_nginxservice_1, srv_nginxservice_5</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line">$ <span class="token function">docker</span> <span class="token function">ps</span></span>
+<span class="line">CONTAINER ID   IMAGE   COMMAND                  CREATED          STATUS         PORTS    NAMES</span>
+<span class="line">de5ce2bcf891   nginx   <span class="token string">&quot;/docker-entrypoint.…&quot;</span>   <span class="token number">53</span> seconds ago   Up <span class="token number">5</span> seconds   <span class="token number">80</span>/tcp   srv_nginxservice_1</span>
+<span class="line">c1371a78d7f9   nginx   <span class="token string">&quot;/docker-entrypoint.…&quot;</span>   <span class="token number">53</span> seconds ago   Up <span class="token number">5</span> seconds   <span class="token number">80</span>/tcp   srv_nginxservice_2</span>
+<span class="line">7a8e2954b267   nginx   <span class="token string">&quot;/docker-entrypoint.…&quot;</span>   <span class="token number">53</span> seconds ago   Up <span class="token number">5</span> seconds   <span class="token number">80</span>/tcp   srv_nginxservice_3</span>
+<span class="line">f31f0c18d169   nginx   <span class="token string">&quot;/docker-entrypoint.…&quot;</span>   <span class="token number">53</span> seconds ago   Up <span class="token number">5</span> seconds   <span class="token number">80</span>/tcp   srv_nginxservice_4</span>
+<span class="line">6fc546cb5a3d   nginx   <span class="token string">&quot;/docker-entrypoint.…&quot;</span>   <span class="token number">53</span> seconds ago   Up <span class="token number">5</span> seconds   <span class="token number">80</span>/tcp   srv_nginxservice_5</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这个例子中我们看到service有5个container被创建出来，每一container的sequence是从1开始累加。</p><div class="custom-container warning"><p class="custom-container-title">注意</p><p>docker-compose stop/start会对5个container一起操作</p></div></li></ul>`,5),l=[c];function p(t,r){return a(),s("div",null,l)}const d=n(i,[["render",p],["__file","service-name-and-container-name.html.vue"]]),u=JSON.parse('{"path":"/docker/tutorial/compose/service-name-and-container-name.html","title":"service name和container name","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"基本概念","slug":"基本概念","link":"#基本概念","children":[]}],"git":{},"filePathRelative":"docker/tutorial/compose/service-name-and-container-name.md"}');export{d as comp,u as data};
