@@ -1,4 +1,4 @@
-export const json = {
+export const json: Record<string, string> = {
     archive: '归档',
     'archive/json': 'Json',
     'algorithms': '算法',

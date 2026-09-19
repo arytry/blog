@@ -15,9 +15,9 @@ export const bar = {
      */
     navbar: function (): NavbarConfig {
 
-        var navbar: any[] = [];
+        let navbar: any[] = [];
 
-        var allDirs = file.getAllDirs(rootpath);
+        let allDirs = file.getAllDirs(rootpath);
 
         allDirs.forEach(item => {
 
@@ -72,9 +72,9 @@ export const bar = {
      */
     sidebar: function (): SidebarConfig {
 
-        var sidebars = {};
+        let sidebars: SidebarConfig = {};
 
-        var allDirs = file.getAllDirs(rootpath);
+        let allDirs = file.getAllDirs(rootpath);
 
         allDirs.forEach(item => {
 
